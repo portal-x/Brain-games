@@ -2,4 +2,4 @@
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
 
-![](https://github.com/portal-x/backend-project-lvl1/actions?query=workflow%3A%22Run+ESLint%22/badge.svg)
+[![Run ESLint](https://github.com/portal-x/backend-project-lvl1/actions?query=workflow%3A%22Run+ESLint%22/badge.svg)](https://github.com/portal-x/backend-project-lvl1/actions?query=workflow%3A%22Run+ESLint%22)
