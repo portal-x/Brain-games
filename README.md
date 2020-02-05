@@ -4,4 +4,4 @@
 
 [![Run ESLint](https://github.com/portal-x/backend-project-lvl1/workflows/Run%20ESLint/badge.svg)](https://github.com/portal-x/backend-project-lvl1/actions?query=workflow%3A%22Run+ESLint%22)
 
-[![asciicast](https://asciinema.org/a/GK6ln809gKPQQXP70pEb9Mk8L.svg)](https://asciinema.org/a/GK6ln809gKPQQXP70pEb9Mk8L)
+<script id="asciicast-GK6ln809gKPQQXP70pEb9Mk8L" src="https://asciinema.org/a/GK6ln809gKPQQXP70pEb9Mk8L.js" async></script>
