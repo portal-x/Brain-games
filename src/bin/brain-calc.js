@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import EvenGames from '../games/even-games';
+import CalcGames from '../games/calc-games';
 
 console.log('Welcome to the Brain Games!');
-EvenGames();
+CalcGames();
