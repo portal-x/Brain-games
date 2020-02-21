@@ -1,29 +1,35 @@
-import { GameEngine } from '..';
+import { gameEngine, randomNum } from '..';
 
-const Task = 'What is the result of the expression?';
-const CheckAnswer = (arg1, arg2) => arg1 === +arg2;
-const expression = (arg1, arg2) => {
-  const SymbolsCollection = ['+', '-', '*'];
-  const MathSymbol = SymbolsCollection[Math.floor(Math.random() * 3)];
-  let RightAnswer;
-  switch (MathSymbol) {
+const task = 'What is the result of the expression?';
+
+const expression = () => {
+  const minNumber = 0;
+  const maxNumber = 20;
+  const arg1 = randomNum(minNumber, maxNumber);
+  const arg2 = randomNum(minNumber, maxNumber);
+  const symbolsCollection = ['+', '-', '*'];
+  const mathSymbol = symbolsCollection[randomNum(0, symbolsCollection.length)];
+  const questionAndAnswer = [];
+  switch (mathSymbol) {
     case '*':
-      RightAnswer = arg1 * arg2;
-      console.log(`Question: ${arg1} * ${arg2}`);
+      questionAndAnswer[0] = (arg1 * arg2);
+      questionAndAnswer[1] = (`${arg1} * ${arg2}`);
       break;
     case '-':
-      RightAnswer = arg1 - arg2;
-      console.log(`Question: ${arg1} - ${arg2}`);
+      questionAndAnswer[0] = (arg1 - arg2);
+      questionAndAnswer[1] = (`${arg1} - ${arg2}`);
       break;
     case '+':
-      RightAnswer = arg1 + arg2;
-      console.log(`Question: ${arg1} + ${arg2}`);
+      questionAndAnswer[0] = (arg1 + arg2);
+      questionAndAnswer[1] = (`${arg1} + ${arg2}`);
       break;
     default:
       break;
-  } return RightAnswer;
-};
-const RightAnswer = (arg) => arg;
-const CalcGames = () => GameEngine(Task, expression, CheckAnswer, RightAnswer);
+  }
 
-export default CalcGames;
+  return questionAndAnswer;
+};
+
+const calcGames = () => gameEngine(task, expression);
+
+export default calcGames;

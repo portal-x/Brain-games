@@ -1,21 +1,22 @@
-import { GameEngine } from '..';
+import { gameEngine, randomNum } from '..';
 
-const Task = 'Find the greatest common divisor of given numbers.';
+const task = 'Find the greatest common divisor of given numbers.';
 
-const CheckAnswer = (num1, num2) => num1 === +num2;
-
-// Common smaller divisor:
-const expression = (num1, num2) => {
-  console.log(`Question: ${num1} ${num2}`);
-  let CommonSmallerDivisor = (num1 >= num2) ? num2 : num1;
-  while ((num1 % CommonSmallerDivisor !== 0) || (num2 % CommonSmallerDivisor !== 0)) {
-    CommonSmallerDivisor -= 1;
+const expression = () => {
+  const minNumber = 0;
+  const maxNumber = 100;
+  const num1 = randomNum(minNumber, maxNumber);
+  const num2 = randomNum(minNumber, maxNumber);
+  const questionAndAnswer = [];
+  let commonSmallerDivisor = (num1 >= num2) ? num2 : num1;
+  while ((num1 % commonSmallerDivisor !== 0) || (num2 % commonSmallerDivisor !== 0)) {
+    commonSmallerDivisor -= 1;
   }
-  return CommonSmallerDivisor;
+  questionAndAnswer[0] = commonSmallerDivisor;
+  questionAndAnswer[1] = (`Question: ${num1} ${num2}`);
+  return questionAndAnswer;
 };
 
-const RightAnswer = (arg) => arg;
+const gcdGames = () => gameEngine(task, expression);
 
-const GcdGames = () => GameEngine(Task, expression, CheckAnswer, RightAnswer);
-
-export default GcdGames;
+export default gcdGames;

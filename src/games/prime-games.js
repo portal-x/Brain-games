@@ -1,17 +1,23 @@
-import { GameEngine } from '..';
+import { gameEngine, randomNum } from '..';
 
-const Task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const CheckAnswer = (arg1, arg2) => arg1 === arg2;
-const expression = (RandomNumber) => {
-  const num = (RandomNumber > 1) ? RandomNumber : RandomNumber + 2;
-  console.log(`Question: ${num}`);
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+
+const expression = () => {
+  const minNumber = 2;
+  const maxNumber = 100;
+  const num = randomNum(minNumber, maxNumber);
+  const questionAndAnswer = [];
+  questionAndAnswer[1] = num;
   for (let count = num - 1; count > 1; count -= 1) {
     if (num % count === 0) {
-      return 'no';
+      questionAndAnswer[0] = 'no';
+      return questionAndAnswer;
     }
-  } return 'yes';
+  }
+  questionAndAnswer[0] = 'yes';
+  return questionAndAnswer;
 };
-const RightAnswer = (arg) => arg;
-const PrimeGames = () => GameEngine(Task, expression, CheckAnswer, RightAnswer);
 
-export default PrimeGames;
+const primeGames = () => gameEngine(task, expression);
+
+export default primeGames;
