@@ -1,17 +1,20 @@
-import { gameEngine, randomNum } from '..';
+import gameEngine from '..';
+import randomNum from '../utils';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const expression = () => {
+const expressionBuilder = () => {
   const minNumber = 1;
   const maxNumber = 100;
   const num = randomNum(minNumber, maxNumber);
   const questionAndAnswer = [];
-  questionAndAnswer[0] = ((num % 2 === 0) ? 'yes' : 'no');
-  questionAndAnswer[1] = num;
+  const question = num;
+  const rightAnswer = ((num % 2 === 0) ? 'yes' : 'no');
+  questionAndAnswer[0] = rightAnswer;
+  questionAndAnswer[1] = question;
   return questionAndAnswer;
 };
 
-const evenGames = () => gameEngine(task, expression);
+const evenCheckerGames = () => gameEngine(task, expressionBuilder);
 
-export default evenGames;
+export default evenCheckerGames;

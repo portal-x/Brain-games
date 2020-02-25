@@ -6,18 +6,17 @@ const userName = () => {
   return name;
 };
 
-export const randomNum = (min, max) => Math.floor(Math.random() * (max - min) + min);
-
-export const gameEngine = (task, expression) => {
+const gameEngine = (task, expression) => {
   console.log('Welcome to the Brain Games!');
   const uname = userName();
+  const numberOfRaunds = 3;
   console.log(task);
-  for (let counter = 0; counter < 3; counter += 1) {
+  for (let counter = 0; counter < numberOfRaunds; counter += 1) {
     const questionAndAnswer = expression();
     const question = questionAndAnswer[1];
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer:');
-    const rightAnswer = String(questionAndAnswer[0]);
+    const answer = readlineSync.question('Your answer: ');
+    const rightAnswer = questionAndAnswer[0];
     if (answer === rightAnswer) {
       console.log('Correct!');
     } else {
@@ -29,4 +28,4 @@ export const gameEngine = (task, expression) => {
 };
 
 
-export default userName;
+export default gameEngine;
