@@ -6,13 +6,13 @@ const userName = () => {
   return name;
 };
 
-const gameEngine = (task, expression) => {
+const gameEngine = (task, gameData) => {
   console.log('Welcome to the Brain Games!');
   const uname = userName();
   const numberOfRaunds = 3;
   console.log(task);
   for (let counter = 0; counter < numberOfRaunds; counter += 1) {
-    const questionAndAnswer = expression();
+    const questionAndAnswer = gameData();
     const question = questionAndAnswer[1];
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -20,11 +20,12 @@ const gameEngine = (task, expression) => {
     if (answer === rightAnswer) {
       console.log('Correct!');
     } else {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.
       Let's try again, ${uname}.`);
+      return;
     }
   }
-  return console.log(`Congratulations, ${uname}`);
+  console.log(`Congratulations, ${uname}`);
 };
 
 

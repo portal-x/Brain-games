@@ -2,18 +2,18 @@ import gameEngine from '..';
 import randomNum from '../utils';
 
 const task = 'What is the result of the expression?';
-const symbols = ['+', '-', '*'];
+const operations = ['+', '-', '*'];
+const minNumber = 0;
+const maxNumber = 20;
 
-const expressionBuilder = () => {
-  const minNumber = 0;
-  const maxNumber = 20;
+const generateGameData = () => {
   const arg1 = randomNum(minNumber, maxNumber);
   const arg2 = randomNum(minNumber, maxNumber);
-  const mathSymbol = symbols[randomNum(0, symbols.length)];
+  const mathOperations = operations[randomNum(0, operations.length)];
   const questionAndAnswer = [];
-  const question = `${arg1} ${mathSymbol} ${arg2}`;
+  const question = `${arg1} ${mathOperations} ${arg2}`;
   let rightAnswer;
-  switch (mathSymbol) {
+  switch (mathOperations) {
     case '*':
       rightAnswer = (arg1 * arg2);
       break;
@@ -31,6 +31,6 @@ const expressionBuilder = () => {
   return questionAndAnswer;
 };
 
-const calculationGames = () => gameEngine(task, expressionBuilder);
+const calculationGames = () => gameEngine(task, generateGameData);
 
 export default calculationGames;

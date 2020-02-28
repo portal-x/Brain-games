@@ -3,7 +3,7 @@ import randomNum from '../utils';
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const expressionBuilder = () => {
+const generateGameData = () => {
   const minNumber = 1;
   const maxNumber = 100;
   const num = randomNum(minNumber, maxNumber);
@@ -15,6 +15,6 @@ const expressionBuilder = () => {
   return questionAndAnswer;
 };
 
-const evenCheckerGames = () => gameEngine(task, expressionBuilder);
+const evenCheckerGames = () => gameEngine(task, generateGameData);
 
 export default evenCheckerGames;

@@ -2,10 +2,10 @@ import gameEngine from '..';
 import randomNum from '../utils';
 
 const task = 'What number is missing in the progression?';
+const minNumber = 0;
+const maxNumber = 100;
 
-const expressionBuilder = () => {
-  const minNumber = 0;
-  const maxNumber = 100;
+const generateGameData = () => {
   const start = randomNum(minNumber, maxNumber);
   const progressionLenght = 10;
   const rangeDiffValue = 10;
@@ -26,6 +26,6 @@ const expressionBuilder = () => {
   return questionAndAnswer;
 };
 
-const progressionCheckerGames = () => gameEngine(task, expressionBuilder);
+const progressionCheckerGames = () => gameEngine(task, generateGameData);
 
 export default progressionCheckerGames;
