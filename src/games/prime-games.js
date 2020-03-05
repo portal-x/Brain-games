@@ -2,11 +2,14 @@ import gameEngine from '..';
 import randomNum from '../utils';
 
 const task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-const minNumber = 2;
+const minNumber = -30;
 const maxNumber = 100;
 
-const checkIsPrime = (num) => {
-  for (let count = num - 1; count > 1; count -= 1) {
+const isPrime = (num) => {
+  if (num <= 1) {
+    return false;
+  }
+  for (let count = 2; count <= (num / 2); count += 1) {
     const notPrime = (num % count === 0);
     if (notPrime) return false;
   } return true;
@@ -14,14 +17,11 @@ const checkIsPrime = (num) => {
 
 const generateGameData = () => {
   const num = randomNum(minNumber, maxNumber);
-  const questionAndAnswer = [];
   const question = num;
-  questionAndAnswer[1] = question;
-  const rightAnswer = checkIsPrime(num) ? 'yes' : 'no';
-  questionAndAnswer[0] = rightAnswer;
-  return questionAndAnswer;
+  const rightAnswer = isPrime(num) ? 'yes' : 'no';
+  return [rightAnswer, question];
 };
 
-const primeCheckerGames = () => gameEngine(task, generateGameData);
+const runPrimeGames = () => gameEngine(task, generateGameData);
 
-export default primeCheckerGames;
+export default runPrimeGames;

@@ -4,28 +4,25 @@ import randomNum from '../utils';
 const task = 'What number is missing in the progression?';
 const minNumber = 0;
 const maxNumber = 100;
+const progressionLenght = 10;
+const rangeDiffValue = 10;
 
 const generateGameData = () => {
   const start = randomNum(minNumber, maxNumber);
-  const progressionLenght = 10;
-  const rangeDiffValue = 10;
   const diff = randomNum(1, rangeDiffValue);
-  const index = randomNum(0, progressionLenght);
+  const index = randomNum(0, (progressionLenght - 1));
   let question = '';
   for (let count = 0; count < progressionLenght; count += 1) {
     if (count === index) {
-      question = (count === 0) ? start : `${question} ..`;
+      question = (count === 0) ? '..' : `${question} ..`;
     } else {
       question = (count === 0) ? start : `${question} ${start + (diff * count)}`;
     }
   }
-  const questionAndAnswer = [];
   const rightAnswer = String(start + (diff * index));
-  questionAndAnswer[0] = rightAnswer;
-  questionAndAnswer[1] = question;
-  return questionAndAnswer;
+  return [rightAnswer, question];
 };
 
-const progressionCheckerGames = () => gameEngine(task, generateGameData);
+const runProgressionGames = () => gameEngine(task, generateGameData);
 
-export default progressionCheckerGames;
+export default runProgressionGames;

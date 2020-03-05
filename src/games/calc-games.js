@@ -9,11 +9,10 @@ const maxNumber = 20;
 const generateGameData = () => {
   const arg1 = randomNum(minNumber, maxNumber);
   const arg2 = randomNum(minNumber, maxNumber);
-  const mathOperations = operations[randomNum(0, operations.length)];
-  const questionAndAnswer = [];
-  const question = `${arg1} ${mathOperations} ${arg2}`;
+  const mathOperation = operations[randomNum(0, (operations.length - 1))];
+  const question = `${arg1} ${mathOperation} ${arg2}`;
   let rightAnswer;
-  switch (mathOperations) {
+  switch (mathOperation) {
     case '*':
       rightAnswer = (arg1 * arg2);
       break;
@@ -26,11 +25,10 @@ const generateGameData = () => {
     default:
       break;
   }
-  questionAndAnswer[0] = String(rightAnswer);
-  questionAndAnswer[1] = question;
-  return questionAndAnswer;
+  const answerForCheck = String(rightAnswer);
+  return [answerForCheck, question];
 };
 
-const calculationGames = () => gameEngine(task, generateGameData);
+const runCalculationGames = () => gameEngine(task, generateGameData);
 
-export default calculationGames;
+export default runCalculationGames;
