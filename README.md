@@ -2,11 +2,11 @@
 
 ##
 This project developed for runing in Command Line Interface and contains five simply games sach as:  
-brain-even - user should decide what number is even,  
-brain-calсs - user should solve random math expresion,  
-brain-gcd - user should find common biggest divisor of two random numbers,  
-brain-progression - user should find missing member of the random progression,  
-brain-prime - user should decide, what number is prime, and what number isn't prime.
+* brain-even - user should decide what number is even,  
+* brain-calсs - user should solve random math expresion,  
+* brain-gcd - user should find common biggest divisor of two random numbers,  
+* brain-progression - user should find missing member of the random progression,  
+* brain-prime - user should decide, what number is prime, and what number isn't prime.
 ##
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/fcdba319037983388b13/maintainability)](https://codeclimate.com/github/portal-x/backend-project-lvl1/maintainability)
@@ -24,3 +24,39 @@ brain-prime - user should decide, what number is prime, and what number isn't pr
 ```sh
 $ make install
 ```
+##
+
+For runing even-games use:
+
+```sh
+$ brain-even
+```
+##
+
+For runing calculation-games use:
+
+```sh
+$ brain-calc
+```
+##
+
+For runing greatestcommon-divisor-games use:
+
+```sh
+$ brain-gcd
+```
+##
+
+For runing progression-games use:
+
+```sh
+$ brain-progression
+```
+##
+
+For runing prime-games use:
+
+```sh
+$ brain-prime
+```
+##
