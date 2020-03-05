@@ -1,11 +1,11 @@
 # PROJECT "BRAIN-GAMES"
 
 ##
-This project developed for runing in Command Line Interface and contains five simply games sach as:
-brain-even - user should decide what number is even,
-brain-calсs - user should solve random math expresion,
-brain-gcd - user should find common biggest divisor of two random numbers,
-brain-progression - user should find missing member of the random progression,
+This project developed for runing in Command Line Interface and contains five simply games sach as:  
+brain-even - user should decide what number is even,  
+brain-calсs - user should solve random math expresion,  
+brain-gcd - user should find common biggest divisor of two random numbers,  
+brain-progression - user should find missing member of the random progression,  
 brain-prime - user should decide, what number is prime, and what number isn't prime.
 ##
 
