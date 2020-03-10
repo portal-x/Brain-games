@@ -25,8 +25,7 @@ const generateGameData = () => {
     default:
       break;
   }
-  const answerForCheck = String(rightAnswer);
-  return [answerForCheck, question];
+  return [String(rightAnswer), question];
 };
 
 const runCalculationGames = () => gameEngine(task, generateGameData);

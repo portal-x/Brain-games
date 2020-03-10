@@ -14,9 +14,9 @@ const generateGameData = () => {
   let question = '';
   for (let count = 0; count < progressionLenght; count += 1) {
     if (count === index) {
-      question = (count === 0) ? '..' : `${question} ..`;
+      question = `${question} ..`;
     } else {
-      question = (count === 0) ? start : `${question} ${start + (diff * count)}`;
+      question = `${question} ${start + (diff * count)}`.trim();
     }
   }
   const rightAnswer = String(start + (diff * index));

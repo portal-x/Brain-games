@@ -7,7 +7,7 @@ const maxNumber = 100;
 
 const generateGameData = () => {
   const question = randomNum(minNumber, maxNumber);
-  const rightAnswer = ((question % 2 === 0) ? 'yes' : 'no');
+  const rightAnswer = (question % 2 === 0) ? 'yes' : 'no';
   return [rightAnswer, question];
 };
 
