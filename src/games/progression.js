@@ -16,11 +16,11 @@ const generateGameData = () => {
     if (count === index) {
       question = `${question} ..`;
     } else {
-      question = `${question} ${start + (diff * count)}`.trim();
+      question = `${question} ${start + (diff * count)}`;
     }
   }
   const rightAnswer = String(start + (diff * index));
-  return [rightAnswer, question];
+  return [rightAnswer, question.trim()];
 };
 
 const runProgressionGames = () => gameEngine(task, generateGameData);

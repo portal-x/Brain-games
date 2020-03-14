@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import commonDivisorFinder from '../games/gcd-games';
+import commonDivisorFinder from '../games/gcd';
 
 commonDivisorFinder();
