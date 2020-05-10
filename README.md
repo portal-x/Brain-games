@@ -24,7 +24,9 @@ This project developed for runing in Command Line Interface and contains five si
 ## Setup
 
 ```sh
+$ git clone https://github.com/portal-x/backend-project-lvl2.git
 $ make install
+$ npm link
 ```
 ##
 
